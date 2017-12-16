@@ -1,3 +1,4 @@
+(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -11,7 +12,7 @@
     (("gnu" . "https://elpa.gnu.org/packages/")
      ("marmalade" . "https://marmalade-repo.org/packages/")
      ("melpa" . "https://melpa.org/packages/"))))
- '(package-selected-packages (quote (company))))
+ '(package-selected-packages (quote (ac-js2 js2-mode editorconfig vue-mode company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,9 +21,12 @@
  )
 
 
-(package-initialize)
-; fetch the list of packages available 
+;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
 
 (package-install-selected-packages)
+
+
+(require 'editorconfig)
+(editorconfig-mode 1)
