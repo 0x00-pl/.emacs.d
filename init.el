@@ -35,15 +35,20 @@
 (package-install-selected-packages)
 
 
-(add-hook 'after-init-hook 'global-company-mode)
+(global-company-mode)
+(eval-after-load 'company
+  '(progn
+     (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+     (setq company-require-match nil)
+     (setq company-auto-complete t)))
+
 
 (require 'editorconfig)
 (editorconfig-mode 1)
 
-(require 'guide-key)
-(guide-key-mode 1)
+;;(require 'guide-key)
+;;(guide-key-mode 1)
 
-
-(require 'js-format)
+;;(require 'js-format)
 
 
