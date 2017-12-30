@@ -43,8 +43,8 @@
      (setq company-auto-complete t)))
 
 
-(require 'editorconfig)
-(editorconfig-mode 1)
+;;(require 'editorconfig)
+;;(editorconfig-mode 1)
 
 ;;(require 'guide-key)
 ;;(guide-key-mode 1)
